@@ -37,3 +37,29 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+#######################################
+# Selenium Automation Framework Ignore #
+#######################################
+
+
+# Logs
+logs/
+*.log
+
+# Screenshots from failed tests
+screenshots/
+
+# Test Reports
+reports/
+test-output/
+
+# Java compiled classes
+*.class
+
+# Environment variables
+*.env
+
+# Temporary files
+*.tmp
+*.swp
