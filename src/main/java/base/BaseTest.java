@@ -12,7 +12,7 @@ public class BaseTest {
        ConfigReader.loadConfig();
        String browser= ConfigReader.get("browser");
        String url= ConfigReader.get("url");
-       driver=BrowserFactory.createBrowserInstance("browser");
+       driver=BrowserFactory.createBrowserInstance(browser);
        driver.get(url);
 
     }
