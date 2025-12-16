@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.WaitUtils;
 
 import java.time.Duration;
 
@@ -14,8 +15,9 @@ public class DashboardPage {
         this.driver=driver;
     }
     //Constructor
-    By dashboardHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module");
-    By profileName = By.cssSelector("p.oxd-userdropdown-name");
+    private By dashboardHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module");
+    private By profileName = By.cssSelector("p.oxd-userdropdown-name");
+    private By performanceBtn=By.xpath("//span[text()='Performance']");;
 
    //waits
     private WebDriverWait getwait() {
@@ -40,7 +42,10 @@ public class DashboardPage {
         return  driver.findElement(profileName).getText();
      }
 
+     public void clickPerformanceBtn() {
+         WaitUtils.waitForElementTobeClickable(driver,performanceBtn,10).click();
 
+     }
 
 
 }
