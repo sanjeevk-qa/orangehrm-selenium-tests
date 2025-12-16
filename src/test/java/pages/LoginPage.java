@@ -13,9 +13,10 @@ public class LoginPage {
         this.driver = driver;
     }
     //Locators
-    By username = By.name("username");
-    By password=By.name("password");
-    By LoginButton=By.cssSelector("button[type=submit]");
+    private final By username = By.name("username");
+    private final By password=By.name("password");
+    private final By LoginButton=By.cssSelector("button[type=submit]");
+
     //Actions
 
     public  void enterUsername(String user) {

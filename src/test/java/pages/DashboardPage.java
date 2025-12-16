@@ -2,14 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.WaitUtils;
 
-import java.time.Duration;
+
 
 public class DashboardPage {
-    WebDriver driver;
+  private final   WebDriver driver;
     //constructor
     public DashboardPage(WebDriver driver) {
         this.driver=driver;
@@ -18,16 +16,18 @@ public class DashboardPage {
     private final By dashboardHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module");
     private final By profileName = By.cssSelector("p.oxd-userdropdown-name");
     private final By performanceBtn=By.xpath("//span[text()='Performance']");
+    private final By logoutBtn= By.xpath("//a[text()='Logout']");
 
    //waits
-    private WebDriverWait getwait() {
-        return new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
+    //private WebDriverWait getwait() {
+    //    return new WebDriverWait(driver, Duration.ofSeconds(10));
+    //}
 
     //Methods
     public  String getDashboardHeaderText() {
-        getwait().until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader));
-        return  driver.findElement(dashboardHeader).getText();
+       return  WaitUtils.waitForElementVisible(driver,dashboardHeader,10).getText().trim();
+       // getwait().until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader));
+        //return  driver.findElement(dashboardHeader).getText();
     }
      public boolean isOnDashboard() {
         String header= getDashboardHeaderText();
@@ -45,6 +45,13 @@ public class DashboardPage {
      public void clickPerformanceBtn() {
          WaitUtils.waitForElementTobeClickable(driver,performanceBtn,10).click();
 
+     }
+     public void clickOnProfile() {
+        WaitUtils.waitForElementTobeClickable(driver,profileName,10).click();
+     }
+     public void logOut()  {
+        clickOnProfile();
+        WaitUtils.waitForElementTobeClickable(driver,logoutBtn,10).click();
      }
 
 
