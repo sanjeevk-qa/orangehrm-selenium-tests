@@ -17,7 +17,7 @@ public class DashboardPage {
     //Constructor
     private By dashboardHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module");
     private By profileName = By.cssSelector("p.oxd-userdropdown-name");
-    private By performanceBtn=By.xpath("//span[text()='Performance']");;
+    private By performanceBtn=By.xpath("//span[text()='Performance']");
 
    //waits
     private WebDriverWait getwait() {
