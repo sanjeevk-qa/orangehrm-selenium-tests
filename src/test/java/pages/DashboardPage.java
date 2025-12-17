@@ -49,7 +49,7 @@ public class DashboardPage {
      public void clickOnProfile() {
         WaitUtils.waitForElementTobeClickable(driver,profileName,10).click();
      }
-     public void logOut()  {
+     public void logout()  {
         clickOnProfile();
         WaitUtils.waitForElementTobeClickable(driver,logoutBtn,10).click();
      }

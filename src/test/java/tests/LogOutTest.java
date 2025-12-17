@@ -11,7 +11,7 @@ public class LogOutTest  extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.loginAs("Admin","admin123");
         DashboardPage dashboard= new DashboardPage(driver);
-        dashboard.logOut();
+        dashboard.logout();
 
 
     }

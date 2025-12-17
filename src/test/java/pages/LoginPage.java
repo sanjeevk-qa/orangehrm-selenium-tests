@@ -7,7 +7,7 @@ import utils.WaitUtils;
 
 public class LoginPage {
 //public static LoginPage() {
-      WebDriver driver;
+       WebDriver  driver;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

@@ -15,7 +15,7 @@ public class PerformancePage {
 
  public String getModuleHeaderText() {
      return   WaitUtils.waitForElementVisible(driver, header,10).getText().trim();
-    //System.out.println(text);;
+
  }
  public boolean isOnPerformancePage() {
     return getModuleHeaderText().equalsIgnoreCase("Performance");
