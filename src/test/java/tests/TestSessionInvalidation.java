@@ -9,7 +9,6 @@ import pages.DashboardPage;
 import pages.LoginPage;
 
 public class TestSessionInvalidation extends BaseTest {
-    private static final Logger log = LoggerFactory.getLogger(TestSessionInvalidation.class);
 
     @Test
     public void validateSessionInvalidationAfterLogoutUsingBackAndRefresh() {
