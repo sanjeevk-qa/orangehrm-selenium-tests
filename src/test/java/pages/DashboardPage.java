@@ -48,5 +48,5 @@ public class DashboardPage {
         WaitUtils.waitForElementTobeClickable(driver,logoutBtn,10).click();
      }
 
+     }
 
-}
