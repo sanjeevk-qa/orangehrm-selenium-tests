@@ -18,16 +18,10 @@ public class DashboardPage {
     private final By performanceBtn=By.xpath("//span[text()='Performance']");
     private final By logoutBtn= By.xpath("//a[text()='Logout']");
 
-   //waits
-    //private WebDriverWait getwait() {
-    //    return new WebDriverWait(driver, Duration.ofSeconds(10));
-    //}
-
     //Methods
     public  String getDashboardHeaderText() {
        return  WaitUtils.waitForElementVisible(driver,dashboardHeader,10).getText().trim();
-       // getwait().until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader));
-        //return  driver.findElement(dashboardHeader).getText();
+
     }
      public boolean isOnDashboard() {
         String header= getDashboardHeaderText();
