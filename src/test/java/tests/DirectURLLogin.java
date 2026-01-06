@@ -9,7 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-public class DirectURLLogin  {
+public class TestDirectURLLogin  {
 
       private WebDriver driver;
          @Test
