@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
 
-public class LogOutTest  extends BaseTest {
+public class TestLogOut extends BaseTest {
 @Test
     public void ValidateLogOut()  {
         LoginPage login = new LoginPage(driver);

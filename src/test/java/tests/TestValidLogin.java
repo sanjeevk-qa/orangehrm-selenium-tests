@@ -11,7 +11,7 @@ public class TestValidLogin extends BaseTest {
     @Test
     public  void testValidLogin()  {
         LoginPage login = new LoginPage(driver);
-        login.loginAs("Admin","admin123");
+        login.loginAs("Admi","admin123");
         System.out.println("Successfull login");
 
         DashboardPage dashboard= new DashboardPage(driver);

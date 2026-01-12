@@ -1,6 +1,8 @@
 package base;
 import config.ConfigReader;
 import factory.BrowserFactory;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
@@ -13,6 +15,9 @@ public class BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(BaseTest.class);
 
+    public String getScreenshotBase64() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+    }
    @BeforeMethod
     public  void login()  {
        ConfigReader.loadConfig();
