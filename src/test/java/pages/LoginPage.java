@@ -17,6 +17,7 @@ public class LoginPage {
     private final By password=By.name("password");
     private final By LoginButton=By.cssSelector("button[type=submit]");
     private final By loginPageTitle=By.xpath("//h5[text()='Login']");
+    private final By invalidLoginMsg = By.xpath("//p[text()='Invalid credentials']");
     //Actions
 
     public  void enterUsername(String user) {
@@ -37,8 +38,13 @@ public class LoginPage {
         clickSubmit();
     }
     public  boolean  isOnLoginPage() {
-    return   WaitUtils.waitForElementVisible(driver,loginPageTitle,10).getText().trim().equalsIgnoreCase("Login");
-
+        return WaitUtils.waitForElementVisible(driver, loginPageTitle, 10).getText().trim().equalsIgnoreCase("Login");
     }
-}
+
+
+    public String isInvalidLoginMsg() {
+       return WaitUtils.waitForElementVisible(driver,invalidLoginMsg,10).getText().trim();
+        }
+    }
+
 
