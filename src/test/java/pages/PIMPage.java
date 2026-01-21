@@ -11,8 +11,8 @@ public class PIMPage {
         this.driver= driver;
     }
 
-    private  By pimMenu = By.xpath("//span[text()='PIM']");
-    private By employeeListBttn= By.xpath("//a[text()='Add Employee']");
+    private final By pimMenu = By.xpath("//span[text()='PIM']");
+    private final By employeeListBttn= By.xpath("//a[text()='Add Employee']");
 
     public void clickOnPIMMenu() {
         WaitUtils.waitForElementTobeClickable(driver,pimMenu,10).click();

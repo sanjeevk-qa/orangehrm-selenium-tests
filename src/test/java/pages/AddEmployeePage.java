@@ -11,11 +11,11 @@ public class AddEmployeePage {
         this.driver=driver;
     }
 
-    private By firstName= By.name("firstName");
-    private By middleName= By.name("middleName");
-    private By lastName= By.name("lastName");
-    private  By saveButton=By.xpath("//button[@type='submit']");
-    private By employeeID = By.xpath("//label[text()='Employee Id']/../following-sibling::div/input");
+    private final By firstName= By.name("firstName");
+    private final By middleName= By.name("middleName");
+    private final By lastName= By.name("lastName");
+    private final By saveButton=By.xpath("//button[@type='submit']");
+    private final By employeeID = By.xpath("//label[text()='Employee Id']/../following-sibling::div/input");
 
     public  AddEmployeePage enterFirstName(String fName) {
          WaitUtils.waitForElementVisible(driver,firstName,10).sendKeys(fName);

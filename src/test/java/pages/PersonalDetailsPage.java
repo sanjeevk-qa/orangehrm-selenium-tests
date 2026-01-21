@@ -11,8 +11,8 @@ public class PersonalDetailsPage {
         this.driver=driver;
     }
 
-    private By personalDetailHeader= By.xpath("//h6[text()='Personal Details']");
-    private By employeeFullNameHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.--strong");
+    private final By personalDetailHeader= By.xpath("//h6[text()='Personal Details']");
+    private final  By employeeFullNameHeader= By.cssSelector("h6.oxd-text.oxd-text--h6.--strong");
 
     public  boolean isOnPersonalDetails() {
         return WaitUtils.waitForElementVisible(driver,personalDetailHeader,20).isDisplayed();
