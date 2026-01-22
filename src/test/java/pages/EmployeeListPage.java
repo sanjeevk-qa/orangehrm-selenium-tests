@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tests.TestAddEmployee;
 import utils.WaitUtils;
 
 public class EmployeeListPage {
-    private static final Logger log = LoggerFactory.getLogger(EmployeeListPage.class);
 
     WebDriver driver;
 
