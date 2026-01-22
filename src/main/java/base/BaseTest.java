@@ -27,6 +27,7 @@ public class BaseTest {
        driver=BrowserFactory.createBrowserInstance(browser);
        driver.get(url);
        log.info("Navigated to OrangeHRM login page");
+       driver.manage().window().maximize();
     }
 
 

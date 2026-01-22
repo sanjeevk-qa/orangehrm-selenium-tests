@@ -5,10 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AddEmployeePage;
-import pages.LoginPage;
-import pages.PIMPage;
-import pages.PersonalDetailsPage;
+import pages.*;
 
 public class TestAddEmployee extends BaseTest {
 
@@ -27,15 +24,22 @@ public class TestAddEmployee extends BaseTest {
         String middleName= " TestMN";
         String lastName= " TestLN";
 
-
-
         log.info(firstName+ middleName+ lastName);
 
         AddEmployeePage employeePage= new AddEmployeePage(driver);
         String empId = employeePage.getEmployeeID();
+        log.info(empId);
         PersonalDetailsPage  personalDetailsPage= employeePage.addEmployee(firstName,middleName,lastName);
         Assert.assertTrue(personalDetailsPage.isOnPersonalDetails()," Personal Details page not displayed after saving employee. EmpId:" + empId);
 
+        PIMPage pimPagePostEmployeeCreation = new PIMPage(driver);
+        pimPagePostEmployeeCreation.clickOnEmployeeListHeader();
+        log.info("Clicked on Employee Header");
+
+        EmployeeListPage employListPage= new EmployeeListPage(driver);
+        //employListPage.waitForFormLoad();
+        log.info("Form Loaded");
+        Assert.assertTrue(employListPage.searchByemployeeid(empId));
 
 
 

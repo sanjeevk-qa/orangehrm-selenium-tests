@@ -13,14 +13,18 @@ public class PIMPage {
 
     private final By pimMenu = By.xpath("//span[text()='PIM']");
     private final By employeeListBttn= By.xpath("//a[text()='Add Employee']");
+    private final By employeeListHeader= By.xpath("//a[normalize-space()='Employee List']");
 
     public void clickOnPIMMenu() {
         WaitUtils.waitForElementTobeClickable(driver,pimMenu,10).click();
     }
     public AddEmployeePage clickOnAddEmployeebBttn() {
-        WaitUtils.waitForElementTobeClickable(driver,employeeListBttn,10).click();
+        WaitUtils.waitForElementTobeClickable(driver, employeeListBttn, 10).click();
         return new AddEmployeePage(driver);
+    }
+        public void clickOnEmployeeListHeader() {
+            WaitUtils.waitForElementTobeClickable(driver,employeeListHeader,10).click();
+        }
 
 
     }
-}
