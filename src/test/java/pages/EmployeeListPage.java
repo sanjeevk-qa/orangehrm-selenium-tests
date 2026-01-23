@@ -17,6 +17,7 @@ public class EmployeeListPage {
     By employeeIDEmployeeInfo=By.xpath("//label[text()='Employee Id']/../following-sibling::div//input");
     By  searchButton=By.xpath("//button[@type='submit' and normalize-space()='Search']");
     By recordFoundText= By.xpath("//span[normalize-space()='(1) Record Found']");
+    By deleteButton=  By.cssSelector("i.oxd-icon.bi-trash");
 
 
 
@@ -30,6 +31,10 @@ public class EmployeeListPage {
 
     public boolean isRecordFound() {
        return WaitUtils.waitForElementVisible(driver,recordFoundText,10).isDisplayed();
+    }
+
+    public void deleteEmployee() {
+        WaitUtils.waitForElementTobeClickable(driver,deleteButton,10);
     }
 
     public boolean searchByemployeeid(String empID) {
