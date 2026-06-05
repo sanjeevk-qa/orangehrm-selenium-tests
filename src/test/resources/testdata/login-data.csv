@@ -1,0 +1,4 @@
+testName,username,password,expectedResult
+valid_login,Admin,admin123,SUCCESS
+invalid_password,Admin,wrongpass,FAILURE
+invalid_user,WrongUser,admin123,FAILURE

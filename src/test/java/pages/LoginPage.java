@@ -18,6 +18,8 @@ public class LoginPage {
     private final By LoginButton=By.cssSelector("button[type=submit]");
     private final By loginPageTitle=By.xpath("//h5[text()='Login']");
     private final By invalidLoginMsg = By.xpath("//p[text()='Invalid credentials']");
+    private final By usernameRequired = By.xpath("//input[@name='username']/ancestor::div[contains(@class,'oxd-input-group')]//span[text()='Required']");
+    private final By passwordRequired = By.xpath("//input[@name='password']/ancestor::div[contains(@class,'oxd-input-group')]//span[text()='Required']");
     //Actions
 
     public  void enterUsername(String user) {
@@ -42,9 +44,29 @@ public class LoginPage {
     }
 
 
-    public String isInvalidLoginMsg() {
+    public String textInvalidLoginMsg() {
        return WaitUtils.waitForElementVisible(driver,invalidLoginMsg,10).getText().trim();
         }
+
+    public  boolean isInvalidLoginMsg() {
+        return WaitUtils.waitForElementVisible(driver,invalidLoginMsg,10).isDisplayed();
+    }
+
+    public boolean isUsernameRequiredShown() {
+        try {
+            return WaitUtils.waitForElementVisible(driver, usernameRequired, 3).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isPasswordRequiredShown() {
+        try {
+            return WaitUtils.waitForElementVisible(driver, passwordRequired, 3).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
     }
 
 

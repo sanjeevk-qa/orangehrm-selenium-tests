@@ -11,7 +11,7 @@ public class TestInvalidCredentials extends BaseTest {
     public void validateInvalidCredentials() {
         LoginPage loginPage = new LoginPage( driver) ;
         loginPage.loginAs("Admin","admin12");
-        Assert.assertEquals(loginPage.isInvalidLoginMsg(),"Invalid credentials" ,"Invalid login message did not match");
+        Assert.assertEquals(loginPage.textInvalidLoginMsg(),"Invalid credentials" ,"Invalid login message did not match");
 
     }
 }
