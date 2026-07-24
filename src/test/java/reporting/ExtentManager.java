@@ -5,6 +5,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import config.ConfigReader;
 
 public class ExtentManager {
     private static ExtentReports extent;
@@ -22,7 +23,7 @@ public class ExtentManager {
             extent.attachReporter(spark);
 
             extent.setSystemInfo("Project", "OrangeHRM");
-            extent.setSystemInfo("Browser", System.getProperty("browser", "chrome"));
+            extent.setSystemInfo("Browser", ConfigReader.get("browser"));
             extent.setSystemInfo("OS", System.getProperty("os.name"));
         }
         return extent;

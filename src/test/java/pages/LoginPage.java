@@ -14,15 +14,15 @@ public class LoginPage {
     }
     //Locators
     private final By username = By.name("username");
-    private final By password=By.name("password");
-    private final By LoginButton=By.cssSelector("button[type=submit]");
-    private final By loginPageTitle=By.xpath("//h5[text()='Login']");
+    private final By password = By.name("password");
+    private final By LoginButton = By.cssSelector("button[type=submit]");
+    private final By loginPageTitle = By.xpath("//h5[text()='Login']");
     private final By invalidLoginMsg = By.xpath("//p[text()='Invalid credentials']");
     private final By usernameRequired = By.xpath("//input[@name='username']/ancestor::div[contains(@class,'oxd-input-group')]//span[text()='Required']");
     private final By passwordRequired = By.xpath("//input[@name='password']/ancestor::div[contains(@class,'oxd-input-group')]//span[text()='Required']");
     //Actions
 
-    public  void enterUsername(String user) {
+    public void enterUsername(String user) {
         WaitUtils.waitForElementVisible(driver,username,10).sendKeys(user);
 
     }
