@@ -17,6 +17,7 @@ public class DashboardPage {
     private final By profileName = By.cssSelector("p.oxd-userdropdown-name");
     private final By performanceBtn=By.xpath("//span[text()='Performance']");
     private final By logoutBtn= By.xpath("//a[text()='Logout']");
+    private final By DirectoryBtn=By.xpath("//span[text()='Directory']");
 
     //Methods
     public  String getDashboardHeaderText() {
@@ -46,6 +47,9 @@ public class DashboardPage {
      public void logout()  {
         clickOnProfile();
         WaitUtils.waitForElementTobeClickable(driver,logoutBtn,10).click();
+     }
+     public void clickOnDirectory() {
+        WaitUtils.waitForElementTobeClickable(driver,DirectoryBtn,10).click() ;
      }
 
      }
