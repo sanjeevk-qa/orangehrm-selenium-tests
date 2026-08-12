@@ -1,7 +1,7 @@
 package base;
 
 import config.ConfigReader;
-import factory.BrowserFactory;
+import factory.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +33,8 @@ public class BaseTest {
        String url= ConfigReader.get("url");
 
        log.info("Launching  browser");
-       driver=BrowserFactory.createBrowserInstance(browser);
+       DriverManager.startDriver(browser);
+       driver = DriverManager.getDriver() ;
        driver.manage().window().maximize();
        driver.get(url);
 

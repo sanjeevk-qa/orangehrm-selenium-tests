@@ -18,6 +18,7 @@ public class DashboardPage {
     private final By performanceBtn=By.xpath("//span[text()='Performance']");
     private final By logoutBtn= By.xpath("//a[text()='Logout']");
     private final By DirectoryBtn=By.xpath("//span[text()='Directory']");
+    private final By ClaimBtn = By.xpath("//span[text()='Claim']");
 
     //Methods
     public  String getDashboardHeaderText() {
@@ -50,6 +51,10 @@ public class DashboardPage {
      }
      public void clickOnDirectory() {
         WaitUtils.waitForElementTobeClickable(driver,DirectoryBtn,10).click() ;
+     }
+
+     public void clickOnClaim() {
+        WaitUtils.waitForElementTobeClickable(driver,ClaimBtn, 10).click();
      }
 
      }

@@ -8,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
    // WebDriver driver; not recommended
-    public static WebDriver createBrowserInstance(String BrowserName) {
+    public static WebDriver createBrowserInstance(String browserName) {
         WebDriver driver;
-        switch (BrowserName) {
+        switch (browserName.toLowerCase()) {
             case "chrome":
                 ChromeOptions options= new ChromeOptions();
                 options.addArguments("--incognito");
